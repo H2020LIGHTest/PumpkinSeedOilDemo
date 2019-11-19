@@ -1,0 +1,36 @@
+Pumpkin Oil Demo
+
+Who is who and what is what? 
+* Halloween Pumpkin Oil Company (HPOC): sells pumpkin oil 
+	o Alice: managing director of HPOC
+		- defines trust policy
+		- verifies electronic transactions
+
+* Pumpkin Oil Federation (POF): federation, which provides networking between trustworthy producers and consumers around the world.
+	o POF operates a Trust Scheme: TrustSchemePumpkinOilFederation
+	o POF maintains trust list of trusted entities
+		- Bob: contact person at POF
+		- e.g. mailto: bob@TrustSchemePumpkinOilFederation.example.com 
+
+* Trust Service Providers (buyers)
+	o SupermarketA
+	o WholesalerA
+
+
+    
+
+Trust Policy:
+
+
+ATV:
+
+
+TSPA:
+
+
+TTA:
+
+ 
+Others:
+
+
