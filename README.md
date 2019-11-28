@@ -44,7 +44,7 @@ Verify Transactions received via Mail (3 different transactions showing differen
 Create transactions for Alice to verify (certificates needed POF: sven, eidas: TUG, Turkish: Tubitak)
 
  * [ ]  Provide POF certs (Sven)
- * [ ]  Provide eIDAS certs (TUG, using CORREOS test cert)
+ * [x]  Provide eIDAS certs (TUG, using CORREOS test cert): [./certs/eidas_qualified](./certs/eidas_qualified)
  * [ ]  Provide TR certs (TUBITAK)
  * [ ]  Create different transactions for different schemes (?)
  * [ ]  Test transactions with prepared demo policy (?)
