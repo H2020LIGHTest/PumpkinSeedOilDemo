@@ -34,8 +34,8 @@ Create Trust Policies (using graphical editor, NL editor and TPL)  (Lukas, Sven 
 Verify Transactions received via Mail (3 different transactions showing different certificates (POF, eIDAs, Turkish)
 
 
-* [x]  Prepare ATV (Stefan)
-* [x]  Add sample policy for checking (Stefan)
+* [x]  Prepare ATV (Stefan): [./atv](./atv)
+* [x]  Add sample policy for checking (Stefan): [./usecase_simple](./usecase_simple)
 * [ ]  Verify prepared demo policy (Lukas, Stefan)
  
 
