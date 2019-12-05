@@ -28,7 +28,7 @@ ATV:
 TSPA:
 
 
-TTA:
+TTA: Trust Translation Authority provides the translation of any trust scheme level from POC to any third party one and/or vice versa, based on a previous bilateral agreement. 
 
  
 Others:
