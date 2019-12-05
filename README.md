@@ -18,9 +18,9 @@ POF setup TSPA (including Trust List) (TUG: infrastructure, FHG: Trust List)
 
 POF setup TTA (including rules) (ATOS: infrastructure and translations)
 
-* [ ]  Setup TTA for POF (ATOS)
+* [x]  Setup TTA for POF (ATOS): Deployed on 8449
 * [ ]  Prepare script to verify TTA is working & reachable (ATOS)
-* [ ]  Publish translation agreement for POF, e.g. from eIDAS & TR (ATOS)
+* [x]  Publish translation agreement for POF, e.g. from eIDAS & TR (ATOS) Published on 29/11 in 8449
 
 
 #### Step 3-4: (Actor: Alice the Verifier):
