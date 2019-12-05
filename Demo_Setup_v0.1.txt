@@ -11,10 +11,13 @@ Who is who and what is what?
 	o POF maintains trust list of trusted entities
 		- Bob: contact person at POF
 		- e.g. mailto: bob@TrustSchemePumpkinOilFederation.example.com 
+	o POF maintains trust translation to trusted schemes
+	    - TR
+	    - eIDAS
 
 * Trust Service Providers (buyers)
-	o SupermarketA
-	o WholesalerA
+	o SupermarketA, member of eIDAS scheme (uses cert signed by a eIDAS CA)
+	o WholesalerB, member of TR scheme (uses cert signed by a TR CA)
 
 
     
