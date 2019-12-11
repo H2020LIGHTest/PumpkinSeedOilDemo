@@ -35,7 +35,8 @@ public class PublishSchemes {
         }
         
         if(status) {
-            logger.info("Scheme published: " + scheme.SCHEME);
+            logger.info("Scheme published:  dig URI _scheme._trust." + scheme.SCHEME);
+            logger.info("With claim:        dig PTR _scheme._trust." + scheme.CLAIM);
         } else {
             logger.error("Publishing failed for Scheme " + scheme.SCHEME);
         }
@@ -46,9 +47,9 @@ public class PublishSchemes {
     public static class SCHEME_TUBITAK_ESIG extends SCHEME {
         
         public SCHEME_TUBITAK_ESIG() {
-            super("https://lightest.iaik.tugraz.at/testschemes/TR_eIDAS_eSignature_2019-11-27_TUG_signed.xml",
-                    "TR-eSignature.pof-demo.lightest.nlnetlabs.nl",
-                    "tr-eidas-esignature.pof-demo.lightest.nlnetlabs.nl");
+            super("https://mindertestbed.org:8443/tta/TR_eIDAS_eSignature_2019-12-05.xml",
+                    "TR-eSignature.lightest.nlnetlabs.nl",
+                    "tr-eidas-esignature.lightest.nlnetlabs.nl");
         }
     }
     
@@ -65,7 +66,7 @@ public class PublishSchemes {
         
         public SCHEME_EIDAS() {
             super("https://ec.europa.eu/information_society/policy/esignature/trusted-list/tl-mp.xml",
-                    "test-scheme.pof-demo.lightest.nlnetlabs.nl",
+                    "eidas-ca.pof-demo.lightest.nlnetlabs.nl",
                     "eidas.pof-demo.lightest.nlnetlabs.nl");
         }
     }
