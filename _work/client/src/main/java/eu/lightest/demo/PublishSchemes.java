@@ -3,17 +3,41 @@ package eu.lightest.demo;
 import eu.lightest.verifier.wrapper.TSPAHelper;
 import org.apache.log4j.Logger;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class PublishSchemes {
     
     private static final String TSPA = "https://tspa.tug.do.nlnetlabs.nl/tspa/api/v1/";
+    public static List<SCHEME> schemes = new ArrayList<>();
     private static Logger logger = Logger.getLogger(PublishSchemes.class);
     
     public static void main(String[] args) {
         PublishSchemes publisher = new PublishSchemes();
         
         boolean statusEidas = publisher.publish(new SCHEME_EIDAS());
-        //boolean statusTrEsig = publisher.publish(new SCHEME_TUBITAK_ESIG());
-        //boolean statusPOF = publisher.publish(new SCHEME_POF());
+        boolean statusTrEsig = publisher.publish(new SCHEME_TUBITAK_ESIG());
+        boolean statusPOF = publisher.publish(new SCHEME_POF());
+        
+        logger.info("statusEidas:  " + statusEidas);
+        logger.info("statusTrEsig: " + statusTrEsig);
+        logger.info("statusPOF:    " + statusPOF);
+        
+        printTable();
+    }
+    
+    private static void printTable() {
+        int col1 = 41;
+        int col2 = 41;
+        int col3 = 81;
+        String pattern = "| %-" + col1 + "s | %-" + col2 + "s | %-" + col3 + "s |";
+        
+        System.out.println(String.format(pattern, "**claim**", "**scheme**", "**TSL**"));
+        System.out.println(String.format(pattern, "", "", "").replace(" ", "-"));
+        
+        for(SCHEME scheme : schemes) {
+            System.out.println(String.format(pattern, scheme.CLAIM, scheme.SCHEME, scheme.TSL));
+        }
         
     }
     
@@ -35,13 +59,14 @@ public class PublishSchemes {
         }
         
         if(status) {
+            logger.info("Claim published:   dig PTR _scheme._trust." + scheme.CLAIM);
             logger.info("Scheme published:  dig URI _scheme._trust." + scheme.SCHEME);
-            logger.info("With claim:        dig PTR _scheme._trust." + scheme.CLAIM);
+            logger.info(" pointing to list: " + scheme.TSL);
         } else {
             logger.error("Publishing failed for Scheme " + scheme.SCHEME);
         }
         
-        return !status;
+        return status;
     }
     
     public static class SCHEME_TUBITAK_ESIG extends SCHEME {
@@ -56,7 +81,7 @@ public class PublishSchemes {
     public static class SCHEME_POF extends SCHEME {
         
         public SCHEME_POF() {
-            super("https://lightest.iaik.tugraz.at/testschemes/POF_TODO.xml",
+            super("https://lightest.iaik.tugraz.at/testschemes/Pumpkin_Demo_TS_v0.2-signed.xml",
                     "company-ca.pof-demo.lightest.nlnetlabs.nl",
                     "federation.pof-demo.lightest.nlnetlabs.nl");
         }
@@ -90,6 +115,8 @@ public class PublishSchemes {
             this.TSL = TSL;
             this.CLAIM = CLAIM;
             this.SCHEME = SCHEME;
+            PublishSchemes.schemes.add(this);
         }
     }
+    
 }
