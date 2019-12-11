@@ -1,0 +1,23 @@
+{
+    "agreement": {
+        "name": "pof-to-tr-esig",
+        "status": "active",
+        "creation-date": "2019-08-10",
+        "leaving-date": "2020-08-10",
+        "activation-date": "2019-08-10",
+        "source": {
+            "name": "federation.pof-demo.lightest.nlnetlabs.nl",
+            "level": "advanced",
+            "provider": "pof",
+            "params": [{
+					"name": "serviceAdditionalServiceInfo",
+					"value": "for_esignatures"
+				}
+			]
+        },
+        "target": {
+            "name": "tr-eidas-esignature.lightest.nlnetlabs.nl",
+            "provider": "tr"
+        }
+    }
+}
