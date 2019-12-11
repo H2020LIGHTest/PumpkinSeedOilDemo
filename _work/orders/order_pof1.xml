@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form format="pumpkinSeedOil">
+	<purchaser>
+		<name>TU Graz Mensa</name>
+		<street>Inffeldgasse 10</street>
+		<city>Graz</city>
+		<country>Austria</country>
+	</purchaser>
+	<item_id>7</item_id>
+	<ammount>100</ammount>
+</form>
