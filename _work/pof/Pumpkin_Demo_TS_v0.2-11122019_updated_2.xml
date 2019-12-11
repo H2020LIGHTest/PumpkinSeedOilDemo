@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><TrustServiceStatusList xmlns="http://uri.etsi.org/02231/v2#" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" xmlns:ns3="http://uri.etsi.org/01903/v1.3.2#" xmlns:ns4="http://uri.etsi.org/02231/v2/additionaltypes#" xmlns:ns5="http://uri.etsi.org/TrstSvc/SvcInfoExt/eSigDir-1999-93-EC-TrustedList/#" xmlns:ns6="http://uri.etsi.org/01903/v1.4.1#" TSLTag="http://uri.etsi.org/19612/TSLTag">
+    <SchemeInformation>
+        <TSLVersionIdentifier>5</TSLVersionIdentifier>
+        <TSLSequenceNumber>1</TSLSequenceNumber>
+        <TSLType>http://uri.etsi.org/TrstSvc/TrustedList/TSLType/EUgeneric</TSLType>
+        <SchemeOperatorName>
+            <Name xml:lang="en">Pumpkin Oil Federation</Name>
+        </SchemeOperatorName>
+        <SchemeOperatorAddress>
+            <PostalAddresses>
+                <PostalAddress xml:lang="en">
+                    <Locality>Pumpkin Town</Locality>
+                    <PostalCode>111111</PostalCode>
+                    <CountryName>PC</CountryName>
+                </PostalAddress>
+            </PostalAddresses>
+            <ElectronicAddress>
+                <URI xml:lang="en">mailto:bob@TrustSchemePumpkinOilFederation.example.com</URI>
+                <URI xml:lang="en">https://TrustSchemePumpkinOilFederation.example.com/Servicemenu/English</URI>
+            </ElectronicAddress>
+        </SchemeOperatorAddress>
+        <SchemeName>
+            <Name xml:lang="en"> Trust Scheme Pumpkin Oil Federation Example: Trusted list including information related to trusted and certified producers and consumers of pumpkin oil (trust service providers), which are supervised by the Pumpkin Oil Federation.</Name>
+        </SchemeName>
+        <SchemeInformationURI>
+            <URI xml:lang="en">https://TrustSchemePumpkinOilFederation.example.com/en/tsl_e.htm</URI>
+        </SchemeInformationURI>
+        <SchemeTypeCommunityRules>
+            <URI xml:lang="en">https://TrustSchemePumpkinOilFederation.example.com/en/schemerules.xml</URI>
+        </SchemeTypeCommunityRules>
+        <SchemeTerritory>Pumpkin Oil Federation</SchemeTerritory>
+        <PolicyOrLegalNotice>
+            <TSLLegalNotice xml:lang="en">The applicable legal framework for the present trusted list is the Pumpkin Oil Federation Regulation  No 11.</TSLLegalNotice>
+        </PolicyOrLegalNotice>
+        <HistoricalInformationPeriod>65535</HistoricalInformationPeriod>
+		<ListIssueDateTime>2019-01-01T00:00:00Z</ListIssueDateTime>
+        <NextUpdate>
+            <dateTime>2021-01-01T00:00:00Z</dateTime>
+        </NextUpdate>
+        <DistributionPoints>
+            <URI>https://TrustSchemePumpkinOilFederation/trust-list.xml</URI>
+        </DistributionPoints>
+    </SchemeInformation>
+    <TrustServiceProviderList>
+        <TrustServiceProvider>
+            <TSPInformation>
+                <TSPName>
+                    <Name xml:lang="en">POF TSPA Demo</Name>
+                </TSPName>
+                <TSPTradeName>
+                    <Name xml:lang="en">VAT-11111111</Name>
+                </TSPTradeName>
+                <TSPAddress>
+                    <PostalAddresses>
+                        <PostalAddress xml:lang="en">
+                            <Locality>Pumpkin Town</Locality>
+                            <PostalCode>111111</PostalCode>
+                            <CountryName>PC</CountryName>
+                        </PostalAddress>
+                    </PostalAddresses>
+                    <ElectronicAddress>
+                        <URI xml:lang="en">https://www.pof.example.com/en/</URI>
+						<URI xml:lang="en">mailto:info@pof.example.com</URI>
+                    </ElectronicAddress>
+                </TSPAddress>
+                <TSPInformationURI>
+                    <URI xml:lang="en">https://www.pof.example.com/en/info</URI>
+                </TSPInformationURI>
+            </TSPInformation>
+            <TSPServices>
+                <TSPService>
+                    <ServiceInformation>
+                        <ServiceTypeIdentifier>http://TrustSchemePumpkinOilFederation.com/ServiceTypes/buyers/</ServiceTypeIdentifier>
+                        <ServiceName>
+                            <Name xml:lang="en">POF CA Demo</Name>
+                        </ServiceName>
+                        <ServiceDigitalIdentity>
+                            <DigitalId>
+								<X509Certificate>MIIDujCCAqKgAwIBAgIEALxhTjANBgkqhkiG9w0BAQ0FADBTMQwwCgYDVQQDEwNQ
+												T0YxHzAdBgNVBAoTFlB1bXBraW4gT2lsIEZlZGVyYXRpb24xFTATBgNVBAcTDFB1
+												bXBraW4gVG93bjELMAkGA1UEBhMCUEMwHhcNMTkxMjA0MTUwMjAxWhcNMjYxMDA4
+												MTUwMjAxWjBTMQwwCgYDVQQDEwNQT0YxHzAdBgNVBAoTFlB1bXBraW4gT2lsIEZl
+												ZGVyYXRpb24xFTATBgNVBAcTDFB1bXBraW4gVG93bjELMAkGA1UEBhMCUEMwggEi
+												MA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC9he9DekCEUScEVfAGgNl/8k5F
+												3FnTAt9M931oTwLqu/KsiX54/mpeUtptLchlu+MtNwZHi9U7nv92QjIXwOSfHlCa
+												y6UIQZZ+2b+I/PcdMrfxZmA0mhaQSC9hwfN/jr2DCQaC37fdcaLXJf9A10Dx2/Mi
+												UVdUgom7tjXTZLIfMqDhaKcBMomvqTZpRr2KfEPGSu+HGiYjzFzJzFvh3UoDjvvk
+												9XaAjf7gcd9maijEcMcu40jFoNDWEhzS4ctFIcgbZkBa7vnXZoZ5VpDNevquQsiw
+												1Uc/jV5kP2Teij1l/+dtrqeWZpan7JwSdEaYv33W6iO2LaduJE1268lgOBF/AgMB
+												AAGjgZUwgZIwHwYDVR0jBBgwFoAU3AtI4P0AHMLHCkQyIcwM+iIORaUwDwYDVR0T
+												BAgwBgEB/wIBAjAOBgNVHQ8BAf8EBAMCAvQwJAYDVR0RBB0wG4YZUE9GLmxpZ2h0
+												ZXN0Lm5sbmV0bGFicy5ubDAJBgNVHRIEAjAAMB0GA1UdDgQWBBTcC0jg/QAcwscK
+												RDIhzAz6Ig5FpTANBgkqhkiG9w0BAQ0FAAOCAQEAFJ/URjw/M8MRZsu9QOJk4iWR
+												pOSQ2dQz11jjAT/P3gmxaZtNGz1qNVdLkWLdfSZ9aO0Mtwrt3XhVVmxX+gt+0hGt
+												y80D8puxOXicsdvWkcFRCyYbKvccHZGGlUJovoDQm3WeorHc/5CCRHREVlYEA7NP
+												3GA588YYtz8Beox3+PC27Lrk2zSJuJGaMkMe1DPMEuMOHiz1t6R1vqfCrpNVKizK
+												7BkbyrXTvBdyo/+KRGasscyngPAVJVoX0f+GLeaFrUIa2yhG7MAWPei7mVsN64tI
+												OB1ULOJvcaSomME1UwvrglnIgfgMlw/HcKBcatBD/te8oVdTgKrVbjOCxnzm+A==</X509Certificate>
+                            </DigitalId>
+                        </ServiceDigitalIdentity>
+                        <ServiceStatus>http://TrustSchemePumpkinOilFederation.example.com/ServiceTypes/Servicestatus/granted/</ServiceStatus>
+                        <StatusStartingTime>2019-01-01T00:00:00Z</StatusStartingTime>
+                    </ServiceInformation>
+                </TSPService>
+            </TSPServices>
+        </TrustServiceProvider>
+    </TrustServiceProviderList>
+	<ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#" Id="id-0cc9ec7bf8a5a2b0ed7a343737ff3801"><ds:SignedInfo><ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><ds:Reference Id="r-id-0cc9ec7bf8a5a2b0ed7a343737ff3801-1" URI=""><ds:Transforms><ds:Transform Algorithm="http://www.w3.org/TR/1999/REC-xpath-19991116"><ds:XPath>not(ancestor-or-self::ds:Signature)</ds:XPath></ds:Transform><ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></ds:Transforms><ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><ds:DigestValue>bBbAoQR1iKUVsIq/8gU8l7UPfbg6TXv8QNQGokl73/VfjIHxoOPjqH7JYzuVgCut+T/wtEC9comH9LCXLnuQ5A==</ds:DigestValue></ds:Reference><ds:Reference Type="http://uri.etsi.org/01903#SignedProperties" URI="#xades-id-0cc9ec7bf8a5a2b0ed7a343737ff3801"><ds:Transforms><ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></ds:Transforms><ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><ds:DigestValue>FB2dAfdC7l8asGjQqy+Ue/vwUJCVtomwLszVoddDbt6ZQSfncMaw6jb6GZ6hb8myA+Z7Yoggkk4tXxyPFBpNjg==</ds:DigestValue></ds:Reference></ds:SignedInfo><ds:SignatureValue Id="value-id-0cc9ec7bf8a5a2b0ed7a343737ff3801">d+UdHQWGdMqmMmbdrBeyFWjc4ZkUT6UXePPQNkCsbddlhPrzSMo2djcoHitAcGgCzyKiP5B1Tb+pA6MitqRcR7utzOmqbuRUFddYzP/r8Fn+t1yrxV2aixXqyKA8ouVIaE5iSnGErwmiz9fIc+l0MIANE3fdALVQsm1j64GB8yytETcFOPtL7KWpbuWBzdySLXy00hSSit/zaycF+QgtqrFzlqLwZy464Bo/nf0szWxoKFGsTnCA7meP59+rjmXDluz7VCpyOEwzCJWUNmA//3U/14mf1fTjY7HHch26A1H+r0oZ3JLflH2UrJKRNzBU49FNQHYIUdMrqFIIlhedFg==</ds:SignatureValue><ds:KeyInfo><ds:X509Data><ds:X509Certificate>MIID4TCCAsmgAwIBAgIEAVTL9zANBgkqhkiG9w0BAQ0FADBTMQwwCgYDVQQDEwNQT0YxHzAdBgNVBAoTFlB1bXBraW4gT2lsIEZlZGVyYXRpb24xFTATBgNVBAcTDFB1bXBraW4gVG93bjELMAkGA1UEBhMCUEMwHhcNMTkxMjA0MTUwMjAxWhcNMjYxMDA4MTUwMjAxWjBZMRIwEAYDVQQDDAl0bF9pc3N1ZXIxHzAdBgNVBAoTFlB1bXBraW4gT2lsIEZlZGVyYXRpb24xFTATBgNVBAcTDFB1bXBraW4gVG93bjELMAkGA1UEBhMCUEMwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCWBzVGm4mTKNcSp6OyH+ZlrQskoxfoliuKRC68Ox82lcdsiN+3FKMtnA3EwYj6Q8vawlvlpevlUVIR2s+xVOcf8VBS/Yy44Pq7TQ4zFXj4L16GbTkbHu3+bT+RT1L8QJzvYzFdxyB9B36pDqBptFRlGFpdaFJyYl1SzUVD4EL/ZyUqcTO+K0T5pO7+DBE5cSGdHX5XHHPxIGOPZMB68TD+COrAmg8GKCLpaR+Ox82/u1BkOr3M+gGeE8EWSCnses8m3rrn4vrEOd/qGBCUUA+6DjkPPE7Ij0MhAzwyWRc1jvAxZQt3PfhKKGLkQOmGtMKvkEkepexgPev0FrqWgdVfAgMBAAGjgbYwgbMwHwYDVR0jBBgwFoAU3AtI4P0AHMLHCkQyIcwM+iIORaUwDwYDVR0TBAgwBgEB/wIBAjAOBgNVHQ8BAf8EBAMCAvQwKgYDVR0RBCMwIYYfdGxfaXNzdWVyLmxpZ2h0ZXN0Lm5sbmV0bGFicy5ubDAkBgNVHRIEHTAbhhlQT0YubGlnaHRlc3QubmxuZXRsYWJzLm5sMB0GA1UdDgQWBBS8cgr1m86xj7MXOJQxDwEhloxsgjANBgkqhkiG9w0BAQ0FAAOCAQEAKcBXBZBuTI7mzJ2M5IBXzO9rUFixqQPRMaPpzd57qxypmG84EPeh69dK/iv2RJjux5G45A2BoOmyhdJVqYIMwHaYAjZde4ml52zYdFBNV8gXUoDCaSccy5g6LyYwwnnoXcptQVNo7JIBXOT1+ZAx6voePujkbtlw2tbixLfJpsGGdD4sKNEF04ajgr/HiWQ3yHbP5vw+KbkaSVy2oi1lUOyFmwLsF+lgtytV0XtbQarzDLsLqIez5ym+3OmH2o8fJnoxc2HQzM4dft9vyOJyFQf02qsPJx+jaiFlDyCIHXZdeOvcSk+aHV/EuC2b6GcCiZVG287I13HlRlgqaUazmg==</ds:X509Certificate><ds:X509Certificate>MIIDujCCAqKgAwIBAgIEALxhTjANBgkqhkiG9w0BAQ0FADBTMQwwCgYDVQQDEwNQT0YxHzAdBgNVBAoTFlB1bXBraW4gT2lsIEZlZGVyYXRpb24xFTATBgNVBAcTDFB1bXBraW4gVG93bjELMAkGA1UEBhMCUEMwHhcNMTkxMjA0MTUwMjAxWhcNMjYxMDA4MTUwMjAxWjBTMQwwCgYDVQQDEwNQT0YxHzAdBgNVBAoTFlB1bXBraW4gT2lsIEZlZGVyYXRpb24xFTATBgNVBAcTDFB1bXBraW4gVG93bjELMAkGA1UEBhMCUEMwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC9he9DekCEUScEVfAGgNl/8k5F3FnTAt9M931oTwLqu/KsiX54/mpeUtptLchlu+MtNwZHi9U7nv92QjIXwOSfHlCay6UIQZZ+2b+I/PcdMrfxZmA0mhaQSC9hwfN/jr2DCQaC37fdcaLXJf9A10Dx2/MiUVdUgom7tjXTZLIfMqDhaKcBMomvqTZpRr2KfEPGSu+HGiYjzFzJzFvh3UoDjvvk9XaAjf7gcd9maijEcMcu40jFoNDWEhzS4ctFIcgbZkBa7vnXZoZ5VpDNevquQsiw1Uc/jV5kP2Teij1l/+dtrqeWZpan7JwSdEaYv33W6iO2LaduJE1268lgOBF/AgMBAAGjgZUwgZIwHwYDVR0jBBgwFoAU3AtI4P0AHMLHCkQyIcwM+iIORaUwDwYDVR0TBAgwBgEB/wIBAjAOBgNVHQ8BAf8EBAMCAvQwJAYDVR0RBB0wG4YZUE9GLmxpZ2h0ZXN0Lm5sbmV0bGFicy5ubDAJBgNVHRIEAjAAMB0GA1UdDgQWBBTcC0jg/QAcwscKRDIhzAz6Ig5FpTANBgkqhkiG9w0BAQ0FAAOCAQEAFJ/URjw/M8MRZsu9QOJk4iWRpOSQ2dQz11jjAT/P3gmxaZtNGz1qNVdLkWLdfSZ9aO0Mtwrt3XhVVmxX+gt+0hGty80D8puxOXicsdvWkcFRCyYbKvccHZGGlUJovoDQm3WeorHc/5CCRHREVlYEA7NP3GA588YYtz8Beox3+PC27Lrk2zSJuJGaMkMe1DPMEuMOHiz1t6R1vqfCrpNVKizK7BkbyrXTvBdyo/+KRGasscyngPAVJVoX0f+GLeaFrUIa2yhG7MAWPei7mVsN64tIOB1ULOJvcaSomME1UwvrglnIgfgMlw/HcKBcatBD/te8oVdTgKrVbjOCxnzm+A==</ds:X509Certificate></ds:X509Data></ds:KeyInfo><ds:Object><xades:QualifyingProperties xmlns:xades="http://uri.etsi.org/01903/v1.3.2#" Target="#id-0cc9ec7bf8a5a2b0ed7a343737ff3801"><xades:SignedProperties Id="xades-id-0cc9ec7bf8a5a2b0ed7a343737ff3801"><xades:SignedSignatureProperties><xades:SigningTime>2019-12-04T15:53:12Z</xades:SigningTime><xades:SigningCertificateV2><xades:Cert><xades:CertDigest><ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><ds:DigestValue>x3vacnqs8P0tAqvPQchzLkgy5CgSTAGlhmSj5ECJVOG7PjHeYNbPw7goMYZ83VXj4Ly4rZ0ckWJIisZPEYnyiA==</ds:DigestValue></xades:CertDigest><xades:IssuerSerialV2>MF8wV6RVMFMxDDAKBgNVBAMTA1BPRjEfMB0GA1UEChMWUHVtcGtpbiBPaWwgRmVkZXJhdGlvbjEVMBMGA1UEBxMMUHVtcGtpbiBUb3duMQswCQYDVQQGEwJQQwIEAVTL9w==</xades:IssuerSerialV2></xades:Cert></xades:SigningCertificateV2><xades:SignaturePolicyIdentifier><xades:SignaturePolicyImplied/></xades:SignaturePolicyIdentifier><xades:SignatureProductionPlaceV2/></xades:SignedSignatureProperties><xades:SignedDataObjectProperties><xades:DataObjectFormat ObjectReference="#r-id-0cc9ec7bf8a5a2b0ed7a343737ff3801-1"><xades:MimeType>text/xml</xades:MimeType></xades:DataObjectFormat></xades:SignedDataObjectProperties></xades:SignedProperties></xades:QualifyingProperties></ds:Object></ds:Signature></TrustServiceStatusList>
