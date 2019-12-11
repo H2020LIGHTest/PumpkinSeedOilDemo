@@ -31,7 +31,7 @@
         <dependency>
             <groupId>eu.lightest</groupId>
             <artifactId>atv</artifactId>
-            <version>1.9.2-SNAPSHOT</version>
+            <version>1.9.3-SNAPSHOT</version>
         </dependency>
 
         <dependency>
