@@ -37,7 +37,7 @@
         <dependency>
             <groupId>eu.lightest</groupId>
             <artifactId>asic_creator</artifactId>
-            <version>1.1-SNAPSHOT</version>
+            <version>1.2-SNAPSHOT</version>
         </dependency>
 
 
