@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><TrustServiceStatusList xmlns="http://uri.etsi.org/02231/v2#" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" xmlns:ns3="http://uri.etsi.org/01903/v1.3.2#" xmlns:ns4="http://uri.etsi.org/02231/v2/additionaltypes#" xmlns:ns5="http://uri.etsi.org/TrstSvc/SvcInfoExt/eSigDir-1999-93-EC-TrustedList/#" xmlns:ns6="http://uri.etsi.org/01903/v1.4.1#" TSLTag="http://uri.etsi.org/19612/TSLTag">
+    <SchemeInformation>
+        <TSLVersionIdentifier>5</TSLVersionIdentifier>
+        <TSLSequenceNumber>1</TSLSequenceNumber>
+        <TSLType>http://uri.etsi.org/TrstSvc/TrustedList/TSLType/EUgeneric</TSLType>
+        <SchemeOperatorName>
+            <Name xml:lang="en">Pumpkin Oil Federation</Name>
+        </SchemeOperatorName>
+        <SchemeOperatorAddress>
+            <PostalAddresses>
+                <PostalAddress xml:lang="en">
+                    <Locality>Pumpkin Town</Locality>
+                    <PostalCode>111111</PostalCode>
+                    <CountryName>PC</CountryName>
+                </PostalAddress>
+            </PostalAddresses>
+            <ElectronicAddress>
+                <URI xml:lang="en">mailto:bob@TrustSchemePumpkinOilFederation.example.com</URI>
+                <URI xml:lang="en">https://TrustSchemePumpkinOilFederation.example.com/Servicemenu/English</URI>
+            </ElectronicAddress>
+        </SchemeOperatorAddress>
+        <SchemeName>
+            <Name xml:lang="en"> Trust Scheme Pumpkin Oil Federation Example: Trusted list including information related to trusted and certified producers and consumers of pumpkin oil (trust service providers), which are supervised by the Pumpkin Oil Federation.</Name>
+        </SchemeName>
+        <SchemeInformationURI>
+            <URI xml:lang="en">https://TrustSchemePumpkinOilFederation.example.com/en/tsl_e.htm</URI>
+        </SchemeInformationURI>
+        <SchemeTypeCommunityRules>
+            <URI xml:lang="en">https://TrustSchemePumpkinOilFederation.example.com/en/schemerules.xml</URI>
+        </SchemeTypeCommunityRules>
+        <SchemeTerritory>Pumpkin Oil Federation</SchemeTerritory>
+        <PolicyOrLegalNotice>
+            <TSLLegalNotice xml:lang="en">The applicable legal framework for the present trusted list is the Pumpkin Oil Federation Regulation  No 11.</TSLLegalNotice>
+        </PolicyOrLegalNotice>
+        <HistoricalInformationPeriod>65535</HistoricalInformationPeriod>
+		<ListIssueDateTime>2019-01-01T00:00:00Z</ListIssueDateTime>
+        <NextUpdate>
+            <dateTime>2021-01-01T00:00:00Z</dateTime>
+        </NextUpdate>
+        <DistributionPoints>
+            <URI>https://TrustSchemePumpkinOilFederation/trust-list.xml</URI>
+        </DistributionPoints>
+    </SchemeInformation>
+    <TrustServiceProviderList>
+        <TrustServiceProvider>
+            <TSPInformation>
+                <TSPName>
+                    <Name xml:lang="en">POF TSPA Demo</Name>
+                </TSPName>
+                <TSPTradeName>
+                    <Name xml:lang="en">VAT-11111111</Name>
+                </TSPTradeName>
+                <TSPAddress>
+                    <PostalAddresses>
+                        <PostalAddress xml:lang="en">
+                            <Locality>Pumpkin Town</Locality>
+                            <PostalCode>111111</PostalCode>
+                            <CountryName>PC</CountryName>
+                        </PostalAddress>
+                    </PostalAddresses>
+                    <ElectronicAddress>
+                        <URI xml:lang="en">https://www.pof.example.com/en/</URI>
+						<URI xml:lang="en">mailto:info@pof.example.com</URI>
+                    </ElectronicAddress>
+                </TSPAddress>
+                <TSPInformationURI>
+                    <URI xml:lang="en">https://www.pof.example.com/en/info</URI>
+                </TSPInformationURI>
+            </TSPInformation>
+            <TSPServices>
+                <TSPService>
+                    <ServiceInformation>
+                        <ServiceTypeIdentifier>http://TrustSchemePumpkinOilFederation.com/ServiceTypes/buyers/</ServiceTypeIdentifier>
+                        <ServiceName>
+                            <Name xml:lang="en">POF CA Demo</Name>
+                        </ServiceName>
+                        <ServiceDigitalIdentity>
+                            <DigitalId>
+								<X509Certificate>MIIDyjCCArKgAwIBAgIEALxhTjANBgkqhkiG9w0BAQ0FADBTMQwwCgYDVQQDEwNQ
+												T0YxHzAdBgNVBAoTFlB1bXBraW4gT2lsIEZlZGVyYXRpb24xFTATBgNVBAcTDFB1
+												bXBraW4gVG93bjELMAkGA1UEBhMCUEMwHhcNMTkxMjEyMTExMzI3WhcNMjYxMDE2
+												MTExMzI3WjBTMQwwCgYDVQQDEwNQT0YxHzAdBgNVBAoTFlB1bXBraW4gT2lsIEZl
+												ZGVyYXRpb24xFTATBgNVBAcTDFB1bXBraW4gVG93bjELMAkGA1UEBhMCUEMwggEi
+												MA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCKmOpzt1kyjDLrPQcETfUeq054
+												yAWz0OfCOPHQSxjcTYz0x6sUXyducFRnhImLMggLjLLzzJ2ll4HraR57TMokYN/M
+												IhIaCDbFWj9vQ/MA7QB2hDtCqd6AIU4YqKmKbechCeT8P6O71GSuDl2O/dq67tQw
+												kMEe6T58XT1w5HAKesTipXBdaKzLA0Zx29nduKCN0zUOLgB7j9ZDX9tDVd5qFcKw
+												HsbcaKdcIp1jgJcMz0IN9lO+R4+Z+f86g/owx0TfiuSTJuKWDAm0DzZxO8GPfbH3
+												yP8vKofQrZeIP4SRGFyDlUPVTVn0W1uSnn2LR4JI9a4V5IF/SKgrfFYFjYXzAgMB
+												AAGjgaUwgaIwHwYDVR0jBBgwFoAU0ul2f78wap4j0euSr97K9DjiOQgwDwYDVR0T
+												BAgwBgEB/wIBAjAOBgNVHQ8BAf8EBAMCAvQwNAYDVR0RBC0wK4IpY29tcGFueS1j
+												YS5wb2YtZGVtby5saWdodGVzdC5ubG5ldGxhYnMubmwwCQYDVR0SBAIwADAdBgNV
+												HQ4EFgQU0ul2f78wap4j0euSr97K9DjiOQgwDQYJKoZIhvcNAQENBQADggEBABSK
+												eieU41o452QpEif3D6wuBgFnKInANNnFgyE65IxKVAGSdyPmk3pWZFXsHLSywvjR
+												zceDglSeW9jO7ima0YHK6Q9VsNk8NiWcYSOf85BteU3OTCPDXc6nFFsn2DUwTLhu
+												j7x95kCW9k313xfBAnmnxaZhLvuOWXyT5AfTtCxOJbFVL4uTTIy4iV6PAQdNYL+6
+												0OXtFg+GvoByT94N+7zpPGB/F+mkPdN3bn5IHNuxVppVXVTbSsa0NQUTJeHWi/Yt
+												vzMvnc5SDeEt1nZK/+GQRRPeYwxduVBTgt9vdGO7KZISXI4H202ADtbqGUoTYTpS
+												PTh43Cr8f8neCX5iBHU=</X509Certificate>
+                            </DigitalId>
+                        </ServiceDigitalIdentity>
+                        <ServiceStatus>http://TrustSchemePumpkinOilFederation.example.com/ServiceTypes/Servicestatus/granted/</ServiceStatus>
+                        <StatusStartingTime>2019-01-01T00:00:00Z</StatusStartingTime>
+                    </ServiceInformation>
+                </TSPService>
+            </TSPServices>
+        </TrustServiceProvider>
+    </TrustServiceProviderList>
+	</TrustServiceStatusList>
