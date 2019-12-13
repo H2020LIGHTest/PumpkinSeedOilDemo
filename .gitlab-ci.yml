@@ -33,5 +33,9 @@ test:
   stage: test
   image: maven:3.3.9-jdk-8
   script:
-    - 'cd $WORKDIR'
-    - 'mvn $MAVEN_CLI_OPTS test'
+  - 'cd $WORKDIR'
+  - 'mvn $MAVEN_CLI_OPTS test'
+  artifacts:
+    reports:
+      junit:
+        - _work/client/target/surefire-reports/TEST-*.xml
