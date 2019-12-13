@@ -27,7 +27,6 @@ compile:jdk8:
   script:
     - 'cd $WORKDIR'
     - 'mvn $MAVEN_CLI_OPTS -DskipTests compile'
-    - 'mvn $MAVEN_CLI_OPTS -DskipTests war:war'
 
 
 test:
