@@ -32,6 +32,7 @@ public class CreateContainer {
         creator = new ASICCreator();
         
         create("order_eidas1", eidas_cert, eidas_password, eidas_alias);
+        create("order_eidas2_failing", eidas_cert, eidas_password, eidas_alias);
         create("order_tr1", tr_cert, tr_password, tr_alias);
         create("order_pof1", pof_cert, pof_password, pof_alias);
         
