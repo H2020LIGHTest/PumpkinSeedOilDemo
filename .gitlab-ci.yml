@@ -36,6 +36,8 @@ test:
   - 'cd $WORKDIR'
   - 'mvn $MAVEN_CLI_OPTS test'
   artifacts:
+    paths:
+    - _work/client/target/surefire-reports/TEST-*.xml
     reports:
       junit:
         - _work/client/target/surefire-reports/TEST-*.xml
