@@ -34,6 +34,8 @@ public class CreateContainer {
         create("order_eidas1", eidas_cert, eidas_password, eidas_alias);
         create("order_tr1", tr_cert, tr_password, tr_alias);
         create("order_pof1", pof_cert, pof_password, pof_alias);
+        
+        logger.info("DONE!");
     }
     
     private static void create(String orderName, String pathToCert, String certPassword, String certAlias) {
