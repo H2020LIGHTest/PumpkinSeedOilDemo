@@ -35,6 +35,10 @@ authorize_order(Form) :-
    Amount <= 100,
   print(authorized_Order_for_Item_7).
 
+authorize_order(Form) :-
+  print(authorizing_order_failed),
+  false().
+  
 
 check_qualified(Certificate) :-
   extract(Certificate, issuer, IssuerCertificate),
