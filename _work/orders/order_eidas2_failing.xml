@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form format="pumpkinSeedOil">
+	<purchaser>
+		<name>Fraunhofer Kitchen</name>
+		<street>Nobelstraße 12</street>
+		<city>Stuttgart</city>
+		<country>Germany</country>
+	</purchaser>
+	<item_id>42</item_id>
+	<amount>9000</amount>
+</form>
