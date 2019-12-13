@@ -81,7 +81,7 @@ public class PublishSchemes {
     public static class SCHEME_POF extends SCHEME {
         
         public SCHEME_POF() {
-            super("https://lightest.iaik.tugraz.at/testschemes/Pumpkin_Demo_TS_v0.2-signed.xml",
+            super("https://lightest.iaik.tugraz.at/testschemes/Pumpkin_Demo_TS_v0.3-signed.xml",
                     "company-ca.pof-demo.lightest.nlnetlabs.nl",
                     "federation.pof-demo.lightest.nlnetlabs.nl");
         }

@@ -24,7 +24,7 @@ public class CreateContainer {
     private static String tr_password = "123456";
     private static String tr_alias = "eSignature-SIGNER";
     
-    private static String pof_cert = "../pof/pof__1_.pfx";
+    private static String pof_cert = "../pof/pof__3_.pfx";
     private static String pof_password = "123456";
     private static String pof_alias = "supermarket_1";
     
