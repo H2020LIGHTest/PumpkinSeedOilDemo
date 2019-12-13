@@ -3,19 +3,19 @@
 Who is who and what is what? 
 
 * Halloween Pumpkin Oil Company (HPOC): sells pumpkin oil 
-	o Alice: managing director of HPOC
+	- Alice: managing director of HPOC
 		- defines trust policy
 		- verifies electronic transactions
 * Pumpkin Oil Federation (POF): federation, which provides networking between trustworthy producers and consumers around the world.
-	o POF operates a Trust Scheme: TrustSchemePumpkinOilFederation
-	o POF maintains trust list of trusted entities
-	o POF maintains trust translation to trusted schemes
+	- POF operates a Trust Scheme: TrustSchemePumpkinOilFederation
+	- POF maintains trust list of trusted entities
+	- POF maintains trust translation to trusted schemes
 	    - TR
 	    - eIDAS
 * Buyers:
-	o supermarket_1, member of POF scheme (uses cert signed by our POF CA)
-	o Correos User, member of eIDAS scheme (uses cert signed by Correos eIDAS CA)
-	o eSignature-SIGNER, member of TR scheme (uses cert signed by TUBITAK TR CA)
+	- supermarket_1, member of POF scheme (uses cert signed by our POF CA)
+	- Correos User, member of eIDAS scheme (uses cert signed by Correos eIDAS CA)
+	- eSignature-SIGNER, member of TR scheme (uses cert signed by TUBITAK TR CA)
 
 
 ### Trust Policy:
