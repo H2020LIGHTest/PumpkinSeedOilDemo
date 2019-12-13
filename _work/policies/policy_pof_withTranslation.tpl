@@ -15,19 +15,22 @@ accept(Form) :-
 
 
 authorize_order(Form) :-
-  extract(Form, item_id, 54678),
+  extract(Form, item_id, ID),
+   ID == 54678,
   extract(Form, amount, Amount),
    Amount <= 10,
   print(authorized_Order_for_Item_54678).
 
 authorize_order(Form) :-
-  extract(Form, item_id, 42),
+  extract(Form, item_id, ID),
+   ID == 42,
   extract(Form, amount, Amount),
    Amount <= 10,
   print(authorized_Order_for_Item_42).
 
 authorize_order(Form) :-
-  extract(Form, item_id, 7),
+  extract(Form, item_id, ID),
+   ID == 7,
   extract(Form, amount, Amount),
    Amount <= 100,
   print(authorized_Order_for_Item_7).
