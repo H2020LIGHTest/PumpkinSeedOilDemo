@@ -17,6 +17,8 @@ POF setup TTA (including rules) (ATOS: infrastructure, TUG: translations)
 
 Create Trust Policies (using graphical editor, NL editor and TPL)  (TUG & DTU)
 
+Oracle JDK: `<path>/jdk1.8.0_152/bin/java -jar TPAT-1.2-SNAPSHOT-jfx.jar`
+
 Verify Transactions received via Mail (3 different transactions showing different certificates (POF, eIDAs, Turkish)
 
 

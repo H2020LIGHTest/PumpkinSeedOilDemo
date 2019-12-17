@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<Transaction format="Generic Format" specification="generic_v1">
+    <Creator>
+        <FirstName type="string" />
+        <LastName type="string" />
+        <ContactNo type="int" />
+        <Email type="string" />
+        <Address>
+            <City type="string" />
+            <State type="string" />
+            <Zip type="int" />
+        </Address>
+    </Creator>
+    <Contract>
+        <Product type="string" />
+        <LastName type="string" />
+        <ContactNo type="int" />
+        <cost type="int" />
+    </Contract>
+</Transaction>

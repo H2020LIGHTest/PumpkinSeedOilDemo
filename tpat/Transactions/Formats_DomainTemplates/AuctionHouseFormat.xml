@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form format="theAuctionHouse2019" specification="theAuctionHouse_v2">
+
+	<person>
+		<name type="string" />
+		<street type="int" />
+		<city type="string" />
+		<country type="string" />
+	</person>
+
+	<lot_number type="int" />
+	<bid type="int" />
+	<certificate type="cert" />
+</form>
+
