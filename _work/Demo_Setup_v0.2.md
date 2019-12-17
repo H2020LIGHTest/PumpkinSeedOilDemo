@@ -22,7 +22,7 @@ Who is who and what is what?
 
 Available in [./_work/policies](https://extgit.iaik.tugraz.at/LIGHTest/lightest-demo/tree/master/_work/policies).
 
-TPL Editor (TPAT) available in [TODO](https://extgit.iaik.tugraz.at/LIGHTest/lightest-demo/tree/master/tpl-editor).
+TPL Editor (TPAT) available in [here](https://extgit.iaik.tugraz.at/LIGHTest/lightest-demo/tree/master/tpat)([Status](https://extgit.iaik.tugraz.at/LIGHTest/lightest-demo/issues/2)).
 
 
 ### ATV:
