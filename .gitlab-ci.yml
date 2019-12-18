@@ -53,5 +53,5 @@ include:
 
 dependency_scanning:
   variables:
-    MAVEN_CLI_OPTS: "ci_settings.xml -U --batch-mode --errors --fail-at-end --show-version -DskipTests"
+    MAVEN_CLI_OPTS: "-s ci_settings.xml -U --batch-mode --errors --fail-at-end --show-version -DskipTests"
     DS_DEFAULT_ANALYZERS: "gemnasium-maven"
