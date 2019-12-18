@@ -44,7 +44,7 @@ public class PublishSchemesTest {
     
     @Test
     public void xPrint() {
-        publisher.printTable();
+        PublishSchemes.printTable();
     }
     
     public static class SCHEME_TUBITAK_ESIG extends PublishSchemes.SCHEME {
