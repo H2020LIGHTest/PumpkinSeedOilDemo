@@ -6,13 +6,13 @@ import org.apache.log4j.Logger;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PublishSchemes {
+public class SchemePublisher {
     
     public static List<SCHEME> schemes = new ArrayList<>();
-    private static Logger logger = Logger.getLogger(PublishSchemes.class);
+    private static Logger logger = Logger.getLogger(SchemePublisher.class);
     private final String TSPA;
     
-    public PublishSchemes(String tspa) {
+    public SchemePublisher(String tspa) {
         TSPA = tspa;
     }
     
@@ -79,7 +79,7 @@ public class PublishSchemes {
             this.TSL = TSL;
             this.CLAIM = CLAIM;
             this.SCHEME = SCHEME;
-            PublishSchemes.schemes.add(this);
+            SchemePublisher.schemes.add(this);
         }
     }
     

@@ -6,7 +6,7 @@ import eu.lightest.verifier.model.report.BufferedStdOutReportObserver;
 import eu.lightest.verifier.model.report.Report;
 import eu.lightest.verifier.model.report.StdOutReportObserver;
 
-public class VerifyContainer {
+public class ContainerVerifier {
     
     private static LocalATVClient client;
     private static BufferedStdOutReportObserver reportBuffer;
@@ -42,13 +42,13 @@ public class VerifyContainer {
     }
     
     private static void printReport() {
-        System.out.println("");
+        System.out.println();
         System.out.println(client.getClass().getSimpleName() + " REPORT: ");
         reportBuffer.print();
         reportBuffer.clearBuffer();
     }
     
     public static boolean prechecksPassed() {
-        return client != null ? ((LocalATVClient) client).prechecksPassed() : false;
+        return client != null && client.prechecksPassed();
     }
 }

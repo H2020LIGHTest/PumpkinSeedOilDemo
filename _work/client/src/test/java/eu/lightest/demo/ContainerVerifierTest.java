@@ -14,7 +14,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 @RunWith(Parameterized.class)
-public class VerifyContainerTest {
+public class ContainerVerifierTest {
     
     private static final FilenameFilter filterAsic = (File dir, String name) -> name.endsWith(".asic") || name.endsWith(".asice") || name.endsWith(".asics");
     private static final FilenameFilter filterPdf = (File dir, String name) -> name.endsWith(".pdf");
@@ -36,7 +36,7 @@ public class VerifyContainerTest {
         List<Object> data = new ArrayList<>();
         
         
-        File container = new File(CreateContainer.orders);
+        File container = new File(ContainerCreator.orders);
         for(File file : container.listFiles(filterAsic)) {
             data.add(new Object[]{file.getPath(), pathPolicy, "policy:XML   " + file.getName()});
             data.add(new Object[]{file.getPath(), pathPolicyPades, "policy:PADES " + file.getName()});
@@ -50,9 +50,9 @@ public class VerifyContainerTest {
     
     @Test
     public void verify() {
-        boolean status = VerifyContainer.verify(container, policy);
+        boolean status = ContainerVerifier.verify(container, policy);
         
-        assertTrue("PreChecks FAILED, but expected to PASS", VerifyContainer.prechecksPassed());
+        assertTrue("PreChecks FAILED, but expected to PASS", ContainerVerifier.prechecksPassed());
         
         if(allowedToFail.apply(container)) {
             assertFalse("Container Validation SUCCEEDED, but expected to FAIL", status);

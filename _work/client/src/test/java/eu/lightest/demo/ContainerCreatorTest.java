@@ -8,7 +8,7 @@ import java.security.cert.CertificateException;
 
 import static org.junit.Assert.assertTrue;
 
-public class CreateContainerTest {
+public class ContainerCreatorTest {
     
     private static String eidas_cert = "../eidas/correos-certs_20190503.p12";
     private static String eidas_password = "7z6pwscEKeeBZnZS";
@@ -21,11 +21,11 @@ public class CreateContainerTest {
     private static String pof_cert = "../pof/pof__3_.pfx";
     private static String pof_password = "123456";
     private static String pof_alias = "supermarket_1";
-    private static CreateContainer creator;
+    private static ContainerCreator creator;
     
     @BeforeClass
     public static void init() throws CertificateException, FileNotFoundException {
-        creator = new CreateContainer();
+        creator = new ContainerCreator();
     }
     
     @Test

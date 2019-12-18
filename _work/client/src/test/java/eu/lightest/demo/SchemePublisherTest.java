@@ -8,14 +8,14 @@ import org.junit.runners.MethodSorters;
 import static org.junit.Assert.assertTrue;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class PublishSchemesTest {
+public class SchemePublisherTest {
     
     private static final String TSPA = "https://tspa.tug.do.nlnetlabs.nl/tspa/api/v1/";
-    private static PublishSchemes publisher;
+    private static SchemePublisher publisher;
     
     @BeforeClass
     public static void init() {
-        publisher = new PublishSchemes(TSPA);
+        publisher = new SchemePublisher(TSPA);
     }
     
     @Test
@@ -44,10 +44,10 @@ public class PublishSchemesTest {
     
     @Test
     public void xPrint() {
-        PublishSchemes.printTable();
+        SchemePublisher.printTable();
     }
     
-    public static class SCHEME_TUBITAK_ESIG extends PublishSchemes.SCHEME {
+    public static class SCHEME_TUBITAK_ESIG extends SchemePublisher.SCHEME {
         
         public SCHEME_TUBITAK_ESIG() {
             super("https://mindertestbed.org:8443/tta/TR_eIDAS_eSignature_2019-12-05.xml",
@@ -56,7 +56,7 @@ public class PublishSchemesTest {
         }
     }
     
-    public static class SCHEME_POF extends PublishSchemes.SCHEME {
+    public static class SCHEME_POF extends SchemePublisher.SCHEME {
         
         public SCHEME_POF() {
             super("https://lightest.iaik.tugraz.at/testschemes/Pumpkin_Demo_TS_v0.3-signed.xml",
@@ -65,7 +65,7 @@ public class PublishSchemesTest {
         }
     }
     
-    public static class SCHEME_EIDAS extends PublishSchemes.SCHEME {
+    public static class SCHEME_EIDAS extends SchemePublisher.SCHEME {
         
         public SCHEME_EIDAS() {
             super("https://ec.europa.eu/information_society/policy/esignature/trusted-list/tl-mp.xml",

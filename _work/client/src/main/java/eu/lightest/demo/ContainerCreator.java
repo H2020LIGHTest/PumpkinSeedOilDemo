@@ -8,15 +8,15 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.security.cert.CertificateException;
 
-public class CreateContainer {
+public class ContainerCreator {
     
     public static String orders = "../orders/";
-    private static Logger logger = Logger.getLogger(CreateContainer.class);
+    private static Logger logger = Logger.getLogger(ContainerCreator.class);
     private static Container.DocumentType containerType = Container.DocumentType.ASICE;
     private ASICCreator creator;
     
     
-    public CreateContainer() throws CertificateException, FileNotFoundException {
+    public ContainerCreator() throws CertificateException, FileNotFoundException {
         creator = new ASICCreator();
     }
     
