@@ -36,6 +36,7 @@ test:
   - 'mvn $MAVEN_CLI_OPTS test'
   - 'mvn $MAVEN_CLI_OPTS jacoco:report'
   - 'cat _work/client/target/site/jacoco/index.html | grep -o "<tfoot>.*</tfoot>"'
+  coverage: '/Total.*?([0-9]{1,3})%/'
   artifacts:
     paths:
     - _work/client/target/surefire-reports/*
