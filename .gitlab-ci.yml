@@ -11,7 +11,7 @@ variables:
   # As of Maven 3.3.0 instead of this you may define these options in `.mvn/maven.config` so the same config is used
   # when running from the command line.
   # `installAtEnd` and `deployAtEnd` are only effective with recent version of the corresponding plugins.
-  MAVEN_CLI_OPTS: "-f $WORKDIR -s ci_settings.xml -U --batch-mode --errors --fail-at-end --show-version -DinstallAtEnd=true -DdeployAtEnd=true"
+  MAVEN_CLI_OPTS: "-f $WORKDIR -s $WORKDIR/ci_settings.xml -U --batch-mode --errors --fail-at-end --show-version -DinstallAtEnd=true -DdeployAtEnd=true"
   DS_DISABLE_DIND: "true"
 
 
@@ -33,13 +33,13 @@ test:
   stage: test
   image: maven:3.3.9-jdk-8
   script:
-  - 'cd $WORKDIR'
   - 'mvn $MAVEN_CLI_OPTS test'
-  - 'mvn jacoco:report'
-  - 'cat target/site/jacoco/index.html | grep -o "<tfoot>.*</tfoot>"'
+  - 'mvn $MAVEN_CLI_OPTS jacoco:report'
+  - 'cat _work/client/target/site/jacoco/index.html | grep -o "<tfoot>.*</tfoot>"'
   artifacts:
     paths:
     - _work/client/target/surefire-reports/*
+    - _work/client/target/site/jacoco/*
     reports:
       junit:
       - _work/client/target/surefire-reports/TEST-*.xml
@@ -52,5 +52,5 @@ include:
 
 dependency_scanning:
   variables:
-    MAVEN_CLI_OPTS: "-f $WORKDIR -s ci_settings.xml -U --batch-mode --errors --fail-at-end --show-version -DskipTests"
+    MAVEN_CLI_OPTS: "-f $WORKDIR -s $WORKDIR/ci_settings.xml -U --batch-mode --errors --fail-at-end --show-version -DskipTests"
     DS_DEFAULT_ANALYZERS: "gemnasium-maven"
