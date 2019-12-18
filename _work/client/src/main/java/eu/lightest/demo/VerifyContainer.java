@@ -24,7 +24,6 @@ public class VerifyContainer {
         return status;
     }
     
-    
     private static ATVClient getClient() {
         if(client != null) {
             return client;
@@ -47,5 +46,9 @@ public class VerifyContainer {
         System.out.println(client.getClass().getSimpleName() + " REPORT: ");
         reportBuffer.print();
         reportBuffer.clearBuffer();
+    }
+    
+    public static boolean prechecksPassed() {
+        return client != null ? ((LocalATVClient) client).prechecksPassed() : false;
     }
 }

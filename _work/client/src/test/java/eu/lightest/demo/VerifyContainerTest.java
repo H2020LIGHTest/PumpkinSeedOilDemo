@@ -52,10 +52,12 @@ public class VerifyContainerTest {
     public void verify() {
         boolean status = VerifyContainer.verify(container, policy);
         
+        assertTrue("PreChecks FAILED, but expected to PASS", VerifyContainer.prechecksPassed());
+        
         if(allowedToFail.apply(container)) {
-            assertFalse(status);
+            assertFalse("Container Validation SUCCEEDED, but expected to FAIL", status);
         } else {
-            assertTrue(status);
+            assertTrue("Container Validation FAILED, but expected to SUCCEEDED", status);
         }
     }
     
