@@ -1,11 +1,27 @@
-# LIGHTest Pumpkin Seed Oil Demo
+# LIGHTest 💚 Pumpkin Seed Oil 💚 Demo
 
 🇪🇺 LIGHTest demo for the EC review. 🇪🇺
 
-WP 3,4 and 6 Cookbook demo.
+Also known as WP3, WP4 and WP6 Cookbook demo.
 
 
-## High Level Overview
+## Repository Overview
+
+* `atv`: JFX build of [AutomaticTrustVerifier-GUI](https://github.com/H2020LIGHTest/AutomaticTrustVerifier-GUI)
+* `tpat`: JFX build of [TrustPolicyAuthoringTool](https://github.com/H2020LIGHTest/TrustPolicyAuthoringTool)
+* `scenario1`: Transaction & Policy for [Scenario 1](#scenario-1)
+* `scenario2`: Transaction & Policy for [Scenario 2](#scenario-2)
+* `scenario3`: Transaction & Policy for [Scenario 3](#scenario-3)
+* `usecase_simple`: another (unrelated) scenario
+* `_work`: Certificates, keys, translations, other transactions & policies
+    * `client`: ATV & ASiC-Creator client in Java
+        * `SchemePublisherTest.java`: TSPA Client
+        * `ContainerCreatorTest.java`: ASiC-Creator Client
+        * `ContainerVerifierTest.java`: ATV Client
+        * `DemoScenarioTest.java`: Client to verify files used in demos
+
+
+## Demo Overview
 
 #### Step 1-2: (Actor: Pumpkin Oil Federation, POF):
 
