@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form format="pumpkinSeedOil">
+	<purchaser>
+		<name>TÜBITAK Restoran</name>
+		<street>Tunus Caddesi</street>
+		<city>Ankara</city>
+		<country>Turkey</country>
+	</purchaser>
+	<item_id>54678</item_id>
+	<amount>3</amount>
+</form>
