@@ -11,11 +11,11 @@ accept(Form) :-
 
 
 check_qualified(Certificate) :-
-  extract(Certificate, issuer, IssuerCertificate),
+  extract(Certificate, issuer, IssuerCert),
 
   extract(IssuerCert, trustScheme, Claim),
   trustscheme(Claim, pumpkin_Oil_Federation),
-  trustlist(Claim, IssuerCert, TrustListEntry)
+  trustlist(Claim, IssuerCert, TrustListEntry),
 
   extract(TrustListEntry, format, trustlist_entry),
 
