@@ -10,11 +10,11 @@ import static org.junit.Assert.assertTrue;
 
 public class ContainerCreatorTest {
     
-    private static String eidas_cert = "../eidas/correos-certs_20190503.p12";
+    private static String eidas_cert = "../eidas/eidas-testcert.p12";
     private static String eidas_password = "7z6pwscEKeeBZnZS";
     private static String eidas_alias = null; // only has one privatekey
     
-    private static String tr_cert = "../tr/tr_20191205.pfx";
+    private static String tr_cert = "../tr/tr-testcert.pfx";
     private static String tr_password = "123456";
     private static String tr_alias = "eSignature-SIGNER";
     
