@@ -31,6 +31,9 @@ public class ContainerVerifierTest {
     @Parameterized.Parameter(2)
     public String testName;
     
+    @Parameterized.Parameter(3)
+    public boolean wrongPolicyUsed;
+    
     @Parameterized.Parameters(name = "{2}")
     public static List<Object> data() {
         List<Object> data = new ArrayList<>();
@@ -38,11 +41,12 @@ public class ContainerVerifierTest {
         
         File container = new File(ContainerCreator.orders);
         for(File file : container.listFiles(filterAsic)) {
-            data.add(new Object[]{file.getPath(), pathPolicy, "policy:XML   " + file.getName()});
-            data.add(new Object[]{file.getPath(), pathPolicyPades, "policy:PADES " + file.getName()});
+            data.add(new Object[]{file.getPath(), pathPolicy, "policy:XML,   " + file.getName(), false});
+            data.add(new Object[]{file.getPath(), pathPolicyPades, "policy:PADES, " + file.getName(), false});
         }
         for(File file : container.listFiles(filterPdf)) {
-            data.add(new Object[]{file.getPath(), pathPolicyPades, "policy:PADES " + file.getName()});
+            data.add(new Object[]{file.getPath(), pathPolicy, "policy:XML,   " + file.getName(), true});
+            data.add(new Object[]{file.getPath(), pathPolicyPades, "policy:PADES, " + file.getName(), false});
         }
         
         return data;
@@ -54,7 +58,7 @@ public class ContainerVerifierTest {
         
         assertTrue("PreChecks FAILED, but expected to PASS", ContainerVerifier.prechecksPassed());
         
-        if(allowedToFail.apply(container)) {
+        if(allowedToFail.apply(container) || wrongPolicyUsed) {
             assertFalse("Container Validation SUCCEEDED, but expected to FAIL", status);
         } else {
             assertTrue("Container Validation FAILED, but expected to SUCCEEDED", status);
