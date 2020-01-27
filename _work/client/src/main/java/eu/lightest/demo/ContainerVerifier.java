@@ -2,17 +2,22 @@ package eu.lightest.demo;
 
 import eu.lightest.verifier.client.ATVClient;
 import eu.lightest.verifier.client.LocalATVClient;
+import eu.lightest.verifier.client.RemoteATVClient;
 import eu.lightest.verifier.model.report.BufferedStdOutReportObserver;
 import eu.lightest.verifier.model.report.Report;
 import eu.lightest.verifier.model.report.StdOutReportObserver;
 
 public class ContainerVerifier {
     
-    private static LocalATVClient client;
+    private static ATVClient client;
     private static BufferedStdOutReportObserver reportBuffer;
     
     public static boolean verify(String pathToContainer, String pathToPolicy) {
-        ATVClient client = getClient();
+        return verify(pathToContainer, pathToPolicy, null);
+    }
+    
+    public static boolean verify(String pathToContainer, String pathToPolicy, String atvURL) {
+        ATVClient client = getClient(atvURL);
         
         System.out.println("Container: " + pathToContainer);
         System.out.println("Policy:    " + pathToPolicy);
@@ -24,11 +29,7 @@ public class ContainerVerifier {
         return status;
     }
     
-    private static ATVClient getClient() {
-        if(client != null) {
-            return client;
-        }
-        
+    private static ATVClient getClient(String atvURL) {
         Report report = new Report();
         
         StdOutReportObserver reporter1 = new StdOutReportObserver();
@@ -37,7 +38,11 @@ public class ContainerVerifier {
         reportBuffer = new BufferedStdOutReportObserver();
         report.addObserver(reportBuffer);
         
-        client = new LocalATVClient(report);
+        if(atvURL == null) {
+            client = new LocalATVClient(report);
+        } else {
+            client = new RemoteATVClient(atvURL, report);
+        }
         return client;
     }
     
@@ -49,6 +54,9 @@ public class ContainerVerifier {
     }
     
     public static boolean prechecksPassed() {
-        return client != null && client.prechecksPassed();
+        if(client != null && client instanceof RemoteATVClient) {
+            return true;
+        }
+        return client != null && ((LocalATVClient) client).prechecksPassed();
     }
 }
