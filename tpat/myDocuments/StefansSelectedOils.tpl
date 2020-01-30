@@ -5,12 +5,34 @@ accept(Form):-
     ,extract(Certificate,pubKey,PK)
     ,extract(Certificate,issuer,Issuer)
     ,extract(Issuer,trustScheme,TrustMemClaim)
-    ,trustschemeX(Issuer,'pumpkin_Oil_Federation',TrustListEntry)
+    ,trustscheme(TrustMemClaim,'pumpkin_Oil_Federation')
+    ,trustlist(TrustMemClaim,Issuer,TrustListEntry)
     ,extract(TrustListEntry,format,trustlist_entry)
     ,extract(TrustListEntry,pubKey,PKIss)
+    ,extract(Form,item_id,Itemid),Itemid==42
+    ,extract(Form,amount,Amount),Amount<=10
     ,verify_signature(Certificate,PKIss)
     ,verify_signature(Form,PK)
     .
+
+
+accept(Form):-
+    extract(Form,format,'pumpkinSeedOil')
+    ,extract(Form,certificate,Certificate)
+    ,extract(Certificate,format,x509cert)
+    ,extract(Certificate,pubKey,PK)
+    ,extract(Certificate,issuer,Issuer)
+    ,extract(Issuer,trustScheme,TrustMemClaim)
+    ,trustscheme(TrustMemClaim,'pumpkin_Oil_Federation')
+    ,trustlist(TrustMemClaim,Issuer,TrustListEntry)
+    ,extract(TrustListEntry,format,trustlist_entry)
+    ,extract(TrustListEntry,pubKey,PKIss)
+    ,extract(Form,item_id,Itemid),Itemid==7
+    ,extract(Form,amount,Amount),Amount<=100
+    ,verify_signature(Certificate,PKIss)
+    ,verify_signature(Form,PK)
+    .
+
 
 
 trustschemeX(IssuerCert, TrustedScheme, TrustListEntry) :-
