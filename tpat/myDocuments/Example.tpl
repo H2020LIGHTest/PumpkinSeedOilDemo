@@ -5,7 +5,7 @@ accept(Form):-
     ,extract(Certificate,pubKey,PK)
     ,extract(Certificate,issuer,Issuer)
     ,extract(Issuer,trustScheme,TrustMemClaim)
-    ,trustschemeX(Issuer,'eIDAS',TrustListEntry)
+    ,trustschemeX(Issuer,'pumpkin_Oil_Federation',TrustListEntry)
     ,extract(TrustListEntry,pubKey,PKIss)
     ,verify_signature(Certificate,PKIss)
     ,verify_signature(Form2,PK)
