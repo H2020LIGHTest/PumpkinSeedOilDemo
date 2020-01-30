@@ -6,27 +6,17 @@ import org.apache.log4j.Logger;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PublishSchemes {
+public class SchemePublisher {
     
-    private static final String TSPA = "https://tspa.tug.do.nlnetlabs.nl/tspa/api/v1/";
     public static List<SCHEME> schemes = new ArrayList<>();
-    private static Logger logger = Logger.getLogger(PublishSchemes.class);
+    private static Logger logger = Logger.getLogger(SchemePublisher.class);
+    private final String TSPA;
     
-    public static void main(String[] args) {
-        PublishSchemes publisher = new PublishSchemes();
-        
-        boolean statusEidas = publisher.publish(new SCHEME_EIDAS());
-        boolean statusTrEsig = publisher.publish(new SCHEME_TUBITAK_ESIG());
-        boolean statusPOF = publisher.publish(new SCHEME_POF());
-        
-        logger.info("statusEidas:  " + statusEidas);
-        logger.info("statusTrEsig: " + statusTrEsig);
-        logger.info("statusPOF:    " + statusPOF);
-        
-        printTable();
+    public SchemePublisher(String tspa) {
+        TSPA = tspa;
     }
     
-    private static void printTable() {
+    public static void printTable() {
         int col1 = 41;
         int col2 = 41;
         int col3 = 81;
@@ -69,32 +59,6 @@ public class PublishSchemes {
         return status;
     }
     
-    public static class SCHEME_TUBITAK_ESIG extends SCHEME {
-        
-        public SCHEME_TUBITAK_ESIG() {
-            super("https://mindertestbed.org:8443/tta/TR_eIDAS_eSignature_2019-12-05.xml",
-                    "TR-eSignature.lightest.nlnetlabs.nl",
-                    "tr-eidas-esignature.lightest.nlnetlabs.nl");
-        }
-    }
-    
-    public static class SCHEME_POF extends SCHEME {
-        
-        public SCHEME_POF() {
-            super("https://lightest.iaik.tugraz.at/testschemes/Pumpkin_Demo_TS_v0.3-signed.xml",
-                    "company-ca.pof-demo.lightest.nlnetlabs.nl",
-                    "federation.pof-demo.lightest.nlnetlabs.nl");
-        }
-    }
-    
-    public static class SCHEME_EIDAS extends SCHEME {
-        
-        public SCHEME_EIDAS() {
-            super("https://ec.europa.eu/information_society/policy/esignature/trusted-list/tl-mp.xml",
-                    "eidas-ca.pof-demo.lightest.nlnetlabs.nl",
-                    "eidas.pof-demo.lightest.nlnetlabs.nl");
-        }
-    }
     
     public static abstract class SCHEME {
         
@@ -115,7 +79,7 @@ public class PublishSchemes {
             this.TSL = TSL;
             this.CLAIM = CLAIM;
             this.SCHEME = SCHEME;
-            PublishSchemes.schemes.add(this);
+            SchemePublisher.schemes.add(this);
         }
     }
     

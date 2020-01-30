@@ -17,6 +17,27 @@
                     <target>8</target>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.5</version>
+                <executions>
+                    <execution>
+                        <id>pre-unit-test</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>post-unit-test</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
@@ -31,7 +52,7 @@
         <dependency>
             <groupId>eu.lightest</groupId>
             <artifactId>atv</artifactId>
-            <version>1.9.5-SNAPSHOT</version>
+            <version>1.9.6.2-SNAPSHOT</version>
         </dependency>
 
         <dependency>

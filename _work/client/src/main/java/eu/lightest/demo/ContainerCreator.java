@@ -8,42 +8,30 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.security.cert.CertificateException;
 
-public class CreateContainer {
+public class ContainerCreator {
     
     public static String orders = "../orders/";
-    private static Logger logger = Logger.getLogger(CreateContainer.class);
-    
-    private static ASICCreator creator;
+    private static Logger logger = Logger.getLogger(ContainerCreator.class);
     private static Container.DocumentType containerType = Container.DocumentType.ASICE;
+    private ASICCreator creator;
     
-    private static String eidas_cert = "../eidas/correos-certs_20190503.p12";
-    private static String eidas_password = "7z6pwscEKeeBZnZS";
-    private static String eidas_alias = null; // only has one privatekey
     
-    private static String tr_cert = "../tr/tr_20191205.pfx";
-    private static String tr_password = "123456";
-    private static String tr_alias = "eSignature-SIGNER";
-    
-    private static String pof_cert = "../pof/pof__3_.pfx";
-    private static String pof_password = "123456";
-    private static String pof_alias = "supermarket_1";
-    
-    public static void main(String[] args) throws CertificateException, FileNotFoundException {
+    public ContainerCreator() throws CertificateException, FileNotFoundException {
         creator = new ASICCreator();
-        
-        create("order_eidas1", eidas_cert, eidas_password, eidas_alias);
-        create("order_eidas2_failing", eidas_cert, eidas_password, eidas_alias);
-        create("order_tr1", tr_cert, tr_password, tr_alias);
-        create("order_pof1", pof_cert, pof_password, pof_alias);
-        
-        logger.info("DONE!");
     }
     
-    private static void create(String orderName, String pathToCert, String certPassword, String certAlias) {
+    public boolean create(String orderName, String pathToCert, String certPassword, String certAlias) {
         String orderPath = orders + orderName + ".xml";
         String containerPath = orders + orderName + ".asice";
         if(!checkFileExists(orderPath)) {
-            return;
+            logger.error("Does not exist: " + orderPath);
+            return false;
+        }
+        
+        if(checkFileExists(containerPath)) {
+            logger.info("Container already exists. Deleting it first ...");
+            File container = new File(containerPath);
+            container.delete();
         }
         
         logger.info("Creating container for " + orderPath);
@@ -51,9 +39,11 @@ public class CreateContainer {
         
         container.saveAsFile(containerPath);
         logger.info("Stored container at " + containerPath);
+        
+        return checkFileExists(containerPath);
     }
     
-    private static boolean checkFileExists(String orderPath) {
+    private boolean checkFileExists(String orderPath) {
         File ordersFolder = new File(orders);
         if(!ordersFolder.exists() || ordersFolder.isFile()) {
             logger.error("Orders folder not found: " + orders);
