@@ -2,6 +2,7 @@ package eu.lightest.demo;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import eu.lightest.verifier.ATVConfiguration;
 import eu.lightest.verifier.exceptions.DNSException;
 import eu.lightest.verifier.wrapper.DNSHelper;
 import eu.lightest.verifier.wrapper.HTTPSHelper;
@@ -24,6 +25,8 @@ import static org.junit.Assume.assumeTrue;
 @RunWith(Parameterized.class)
 public class DNSVerifierTest {
     
+    public static final boolean TEST_ONLY_DEFAULT = true;
+    
     public static final String TYPE_SMIMEA = "SMIMEA";
     public static final String TYPE_URI = "URI";
     public static final String TYPE_PTR = "PTR";
@@ -32,6 +35,8 @@ public class DNSVerifierTest {
     private static DNSHelper dnsGOOGLE;
     private static HTTPSHelper http;
     private static JsonParser jsonParser;
+    private static DNSHelper dnsDefault;
+    private static String defaultNS;
     
     @Parameterized.Parameter(0)
     public String type;
@@ -41,6 +46,8 @@ public class DNSVerifierTest {
     
     @BeforeClass
     public static void init() throws IOException {
+        defaultNS = ATVConfiguration.get().getString("dns_nameserver", "NO DEFAULT FOUND");
+        dnsDefault = new DNSHelper();
         dnsCLOUDFLAIR = new DNSHelper(DNSHelper.DNS_CLOUDFLARE1);
         dnsGOOGLE = new DNSHelper(DNSHelper.DNS_GOOGLE1);
         http = new HTTPSHelper();
@@ -72,7 +79,29 @@ public class DNSVerifierTest {
     }
     
     @Test
+    public void verifyDefault() throws IOException, DNSException {
+        System.out.println("Using nameserver: " + defaultNS);
+        
+        DNSHelper dns = dnsDefault;
+        switch(this.type) {
+            case TYPE_PTR:
+                dns.queryPTR(this.hostname);
+                break;
+            case TYPE_URI:
+                dns.queryURI(this.hostname);
+                break;
+            case TYPE_SMIMEA:
+                dns.querySMIMEA(this.hostname);
+                break;
+            default:
+                assertTrue("Wrong type: " + type, false);
+        }
+    }
+    
+    @Test
     public void verifyCloudflair() throws IOException, DNSException {
+        assumeTrue(TEST_ONLY_DEFAULT == false);
+        
         DNSHelper dns = dnsCLOUDFLAIR;
         switch(this.type) {
             case TYPE_PTR:
@@ -91,6 +120,8 @@ public class DNSVerifierTest {
     
     @Test
     public void verifyGoogle() throws IOException, DNSException {
+        assumeTrue(TEST_ONLY_DEFAULT == false);
+        
         DNSHelper dns = dnsGOOGLE;
         switch(this.type) {
             case TYPE_PTR:
@@ -109,6 +140,7 @@ public class DNSVerifierTest {
     
     @Test
     public void verifyGoogleWeb() throws IOException {
+        assumeTrue(TEST_ONLY_DEFAULT == false);
         assumeTrue(this.type == TYPE_PTR);
         
         String url = "https://dns.google.com/resolve?name=" + this.hostname + "&type=" + this.type;
@@ -121,11 +153,13 @@ public class DNSVerifierTest {
     
     @Test
     public void verifyGoogleDrill() throws IOException, InterruptedException {
+        assumeTrue(TEST_ONLY_DEFAULT == false);
         verifyDrill(DNSHelper.DNS_GOOGLE1);
     }
     
     @Test
     public void verifyCloudflairDrill() throws IOException, InterruptedException {
+        assumeTrue(TEST_ONLY_DEFAULT == false);
         verifyDrill(DNSHelper.DNS_CLOUDFLARE1);
     }
     
