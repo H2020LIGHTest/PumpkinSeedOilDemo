@@ -20,7 +20,8 @@ public class DNSVerifierTest {
     public static final String TYPE_URI = "URI";
     public static final String TYPE_PTR = "PTR";
     
-    private static DNSHelper dns;
+    private static DNSHelper dnsCLOUDFLAIR;
+    private static DNSHelper dnsGOOGLE;
     
     @Parameterized.Parameter(0)
     public String type;
@@ -30,7 +31,8 @@ public class DNSVerifierTest {
     
     @BeforeClass
     public static void init() throws IOException {
-        dns = new DNSHelper(DNSHelper.DNS_CLOUDFLARE1);
+        dnsCLOUDFLAIR = new DNSHelper(DNSHelper.DNS_CLOUDFLARE1);
+        dnsGOOGLE = new DNSHelper(DNSHelper.DNS_GOOGLE1);
     }
     
     @Parameterized.Parameters(name = "{0} {1}")
@@ -58,7 +60,26 @@ public class DNSVerifierTest {
     }
     
     @Test
-    public void verify() throws IOException, DNSException {
+    public void verifyCloudflair() throws IOException, DNSException {
+        DNSHelper dns = dnsCLOUDFLAIR;
+        switch(this.type) {
+            case TYPE_PTR:
+                dns.queryPTR(this.hostname);
+                break;
+            case TYPE_URI:
+                dns.queryURI(this.hostname);
+                break;
+            case TYPE_SMIMEA:
+                dns.querySMIMEA(this.hostname);
+                break;
+            default:
+                assertTrue("Wrong type: " + type, false);
+        }
+    }
+    
+    @Test
+    public void verifyGoogle() throws IOException, DNSException {
+        DNSHelper dns = dnsGOOGLE;
         switch(this.type) {
             case TYPE_PTR:
                 dns.queryPTR(this.hostname);
