@@ -1,17 +1,25 @@
 package eu.lightest.demo;
 
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import eu.lightest.verifier.exceptions.DNSException;
 import eu.lightest.verifier.wrapper.DNSHelper;
+import eu.lightest.verifier.wrapper.HTTPSHelper;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
 import java.util.Arrays;
 import java.util.Collection;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assume.assumeTrue;
 
 @RunWith(Parameterized.class)
 public class DNSVerifierTest {
@@ -22,6 +30,8 @@ public class DNSVerifierTest {
     
     private static DNSHelper dnsCLOUDFLAIR;
     private static DNSHelper dnsGOOGLE;
+    private static HTTPSHelper http;
+    private static JsonParser jsonParser;
     
     @Parameterized.Parameter(0)
     public String type;
@@ -33,6 +43,8 @@ public class DNSVerifierTest {
     public static void init() throws IOException {
         dnsCLOUDFLAIR = new DNSHelper(DNSHelper.DNS_CLOUDFLARE1);
         dnsGOOGLE = new DNSHelper(DNSHelper.DNS_GOOGLE1);
+        http = new HTTPSHelper();
+        jsonParser = new JsonParser();
     }
     
     @Parameterized.Parameters(name = "{0} {1}")
@@ -93,5 +105,49 @@ public class DNSVerifierTest {
             default:
                 assertTrue("Wrong type: " + type, false);
         }
+    }
+    
+    @Test
+    public void verifyGoogleWeb() throws IOException {
+        assumeTrue(this.type == TYPE_PTR);
+        
+        String url = "https://dns.google.com/resolve?name=" + this.hostname + "&type=" + this.type;
+        String res = http.get(new URL(url));
+        final JsonObject data = jsonParser.parseString(res).getAsJsonObject();
+        
+        assertEquals("Status was not 0.", 0, data.get("Status").getAsInt());
+        assertEquals("AD flag not TRUE", true, data.get("AD").getAsBoolean());
+    }
+    
+    @Test
+    public void verifyGoogleDrill() throws IOException, InterruptedException {
+        verifyDrill(DNSHelper.DNS_GOOGLE1);
+    }
+    
+    @Test
+    public void verifyCloudflairDrill() throws IOException, InterruptedException {
+        verifyDrill(DNSHelper.DNS_CLOUDFLARE1);
+    }
+    
+    public void verifyDrill(String nameserver) throws IOException, InterruptedException {
+        ProcessBuilder processBuilder = new ProcessBuilder();
+        processBuilder.command("drill", "-D", this.type, this.hostname, "@" + nameserver);
+        
+        Process process = processBuilder.start();
+        
+        BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+        
+        String line;
+        while((line = reader.readLine()) != null) {
+            System.out.println(line);
+            if(line.startsWith(";; EDNS:")) {
+                assertTrue("DO flag not found.", line.contains("flags: do"));
+            } else if(line.startsWith(";; flags: ")) {
+                assertTrue("AD flag not found.", line.contains("ad"));
+            }
+        }
+        
+        int exitCode = process.waitFor();
+        assertEquals("Error during drilling ...", 0, exitCode);
     }
 }
