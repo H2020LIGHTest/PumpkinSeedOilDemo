@@ -1,0 +1,14 @@
+_scheme._trust.company-ca.pof-demo.example.   0   IN  PTR _scheme._trust.federation.pof-demo.example.
+
++ RRSIG
+
+
+
+
+
+_scheme._trust.federation.pof-demo.example.   0   IN  URI 10 1 "https://pof-demo.example/trustlist.xml"
+
+
+_scheme._trust.federation.pof-demo.example.   0   IN  SMIMEA  3 0 1 8e61f028cbbf40bc629f5d8000ccb9a76226bb1a1380b0316188d19253949971
+
++ RRSIG
