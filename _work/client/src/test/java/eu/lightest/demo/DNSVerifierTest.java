@@ -25,7 +25,8 @@ import static org.junit.Assume.assumeTrue;
 @RunWith(Parameterized.class)
 public class DNSVerifierTest {
     
-    public static final boolean TEST_ONLY_DEFAULT = true;
+    public static final boolean TEST_ONLY_DEFAULT = true; // if true, only configured NS is tested
+    public static final boolean TEST_USING_DRILL = false; // if true, drill is used in addition to DNSHelper
     
     public static final String TYPE_SMIMEA = "SMIMEA";
     public static final String TYPE_URI = "URI";
@@ -154,12 +155,14 @@ public class DNSVerifierTest {
     @Test
     public void verifyGoogleDrill() throws IOException, InterruptedException {
         assumeTrue(TEST_ONLY_DEFAULT == false);
+        assumeTrue(TEST_USING_DRILL == true);
         verifyDrill(DNSHelper.DNS_GOOGLE1);
     }
     
     @Test
     public void verifyCloudflairDrill() throws IOException, InterruptedException {
         assumeTrue(TEST_ONLY_DEFAULT == false);
+        assumeTrue(TEST_USING_DRILL == true);
         verifyDrill(DNSHelper.DNS_CLOUDFLARE1);
     }
     
