@@ -79,6 +79,7 @@ public class DNSVerifierTest {
         });
     }
     
+    
     @Test
     public void verifyDefault() throws IOException, DNSException {
         System.out.println("Using nameserver: " + defaultNS);
@@ -186,5 +187,16 @@ public class DNSVerifierTest {
         
         int exitCode = process.waitFor();
         assertEquals("Error during drilling ...", 0, exitCode);
+    }
+    
+    @Test
+    public void print() {
+        for(Object[] line : data()) {
+            System.out.println(String.format("driller 1.1.1.1 %-6s %s  ", line[0], line[1]));
+            System.out.println(String.format("driller 1.1.1.1 %-6s %s  ", line[0], line[1]));
+            System.out.println(String.format("driller 8.8.8.8 %-6s %s  ", line[0], line[1]));
+            System.out.println(String.format("driller 8.8.8.8 %-6s %s  ", line[0], line[1]));
+            System.out.println("echo ''");
+        }
     }
 }
