@@ -33,6 +33,7 @@ test:
   stage: test
   image: maven:3.3.9-jdk-8
   script:
+  - 'apt install ldnsutils'
   - 'mvn $MAVEN_CLI_OPTS test'
   - 'mvn $MAVEN_CLI_OPTS jacoco:report'
   - 'cat _work/client/target/site/jacoco/index.html | grep -o "<tfoot>.*</tfoot>"'
