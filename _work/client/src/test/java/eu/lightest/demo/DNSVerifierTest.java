@@ -25,7 +25,7 @@ import static org.junit.Assume.assumeTrue;
 @RunWith(Parameterized.class)
 public class DNSVerifierTest {
     
-    public static final boolean TEST_ONLY_DEFAULT = false; // if true, only configured NS is tested
+    public static final boolean TEST_ONLY_DEFAULT = true; // if true, only configured NS is tested
     public static final boolean TEST_USING_DRILL = false; // if true, drill is used in addition to DNSHelper
     
     public static final String TYPE_SMIMEA = "SMIMEA";
