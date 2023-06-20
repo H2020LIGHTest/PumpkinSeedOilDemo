@@ -1,4 +1,8 @@
-hi Georg,
+# demo version of LIGHTest Trust Policy Authering Tool (TPAT)
+
+see for full version: https://github.com/H2020LIGHTest/TrustPolicyAuthoringTool
+
+---
 
 exec:
 ./jdk1.8.0_152/bin/java -jar TPAT-1.2-jfx.jar
@@ -12,6 +16,3 @@ Note:
 - Undo should be working but not fully tested, so do not exagerate with it, better redo the step manually ;)
 - simplest way to restore prepaired saves, is to simply git revert the files in folder 'saves'.
 - If you decide to build a long policy in NL, make sure you always resize the statement (sometimes the dragfield collapses)
-
-Best of the luck for the presentation,
-Lukas

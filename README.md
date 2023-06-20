@@ -76,7 +76,7 @@ Verify Transactions received via Mail (3 different transactions showing differen
 
 * Step 3: Explain eID / Handysignatur
 * Step 3: Show `order.pdf`
-* Step 3: Use [PDF-Over](https://webstart.buergerkarte.at/pdf-over/) or [A-Trust](https://www.handy-signatur.at/hs2/#!sign/single) to sign `order.pdf`
+* Step 3: Use [PDF-Over](https://technology.a-sit.at/en/pdf-over/) or [A-Trust](https://www.handy-signatur.at/hs2/#!sign/single) to sign `order.pdf`
 * Step 4: Show `policy3_pof_withTranslation_withPades.tpl`
 * Step 5: Open ATV with `order_signed.pdf` and `policy3_pof_withTranslation_withPades.tpl`
 
