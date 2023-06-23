@@ -1,6 +1,4 @@
-# LIGHTest 💚 Pumpkin Seed Oil 💚 Demo
-
-🇪🇺 LIGHTest demo for the EC review. 🇪🇺
+# 🇪🇺 LIGHTest 💚 Pumpkin Seed Oil 💚 Demo
 
 Also known as WP3, WP4 and WP6 Cookbook demo.
 
